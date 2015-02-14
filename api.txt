@@ -1,0 +1,79 @@
+url: http://192.168.56.10/data_models/get_current_and_upcoming_events/
+
+will return a json array of upcoming or ongoing events that are hashes (dictionaries).
+all values are strings unless otherwise noted
+
+include a json object of user location as hash {“latitude”:(float), “longitude”:(float)}
+events are structured as such:
+
+{
+    "event_id": (integer),
+    "scene_id": (integer),
+    "description1": "",
+    "description2": "",
+    "distance_to_user": (float),
+    "start": "", #start and end time currently are formatted as "3:00 PM". This is strait from spread sheet. Will change on server
+    "end": "",
+    "is_ongoing": (bool),
+    "is_upcoming": (bool),
+    "year": "",
+    "message": "",
+    "day": "",
+    "type": "", currently returns either: "food_truck", "happy_hour", "performer"
+    "scene": {
+              "phone_number": "",
+              "name": "",
+              "open_table_url": "",
+              "twitter_url": "",
+              "yelp_url": "",
+              "facebook_url": "",
+              "hours": { #scene hours currently are formatted as "3:00 PM". This is strait from spread sheet. Will change on server
+                        "monday": "",
+                        "tuesday": "",
+                        "friday": "",
+                        "wednesday": "",
+                        "thursday": "",
+                        "sunday": "",
+                        "saturday": ""
+                        },
+              "contact": "",
+              "address": {
+                            "city": "",
+                            "zip": "",
+                            "country": "",
+                            "latitude": "", will change to a float in future
+                            "longitude": "", will change to a float in future
+                            "state": "",
+                            "address": "",
+                          },
+              "scene_id": (integer),
+              "logo": "",
+              "instagram_url": "",
+              "type": "",
+              "email": "",
+              "website_url": "",
+              "description": ""
+              },
+    "month": "",
+    "hours": {  #event hours will return either a zero or one depending on if the event is occuring that day. (0 if not occurring)
+                #Shouldn’t need this since we have start and end time. The server call will return only events
+                #occurring on the date the query is made.
+                "monday": "",
+                "tuesday": "",
+                "wednesday": "",
+                "thursday": "",
+                "friday": "",
+                "saturday": ""
+                "sunday": "",
+              },
+
+    "address": {
+                "city": "",
+                "zip": "",
+                "country": "",
+                "longitude": "",
+                "state": "",
+                "address": "",
+                "latitude": ""
+                }
+}

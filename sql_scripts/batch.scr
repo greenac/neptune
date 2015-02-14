@@ -1,0 +1,1 @@
+mysql --user=andre --password=Perhar@6221 around_db  < $HOME/around/neptune/sql_scripts/occupancy_set_to_zero.sql

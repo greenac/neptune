@@ -1,0 +1,1 @@
+mysqldump -u andre -p around_db data_models_scene data_models_event > ../mysql_files/tables/$1

@@ -1,0 +1,25 @@
+from django.conf.urls import patterns, url
+from data_models import views
+
+urlpatterns = patterns('',
+                       url(r'^get_scenes_in_view/', views.get_scenes_in_view),
+                       url(r'^get_current_and_upcoming_events/', views.get_current_and_upcoming_events),
+                       url(r'^fetch_events/', views.fetch_events),
+                       url(r'^get_user/', views.get_user),
+                       url(r'^save_user/', views.save_user),
+                       url(r'^comments_for_scenes/', views.comments_for_scenes),
+                       url(r'^save_comment/', views.save_comment),
+                       url(r'^supported_city/', views.supported_city),
+                       url(r'^all_users/', views.all_users),
+                       url(r'^post_profile_pic/', views.post_profile_pic),
+                       url(r'^get_profile_pic/', views.get_profile_pic),
+                       url(r'^get_occupancy/', views.get_occupancy),
+                       url(r'^set_occupancy/', views.set_occupancy),
+                       url(r'^event_icon_urls/', views.event_icon_urls),
+                       url(r'^filter_order/', views.filter_order),
+                       url(r'^occupancy_today/', views.occupancy_today),
+                       url(r'^get_decoder_name_unique/',views.get_decoder_name_unique),
+                       url(r'^get_decoder_name_multiple/',views.get_decoder_name_multiple),
+                       url(r'^get_decoder_range/', views.get_decoder_range),
+                       url(r'^opening_message/', views.opening_message),
+)

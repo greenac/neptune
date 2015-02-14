@@ -1,0 +1,5 @@
+mysql -u andre -p around_db -e "use around_db; drop table data_models_event;"
+#python around/manage.py reset data_models
+python around/manage.py migrate
+python fill_db.py
+python3 get_coords.py
